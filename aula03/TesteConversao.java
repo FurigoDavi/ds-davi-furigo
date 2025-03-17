@@ -19,7 +19,7 @@ public class TesteConversao {
         float percentage = (float) userScore / maxScore * 100.0f;
 
         // Print the result
-        System.out.println("User's percentage is " + percentage + "%");
+        System.out.println("A porcentagem do usuario é " + percentage + "%");
 
         // Minha Versão
         float MinhaDivida = 5000000f;
