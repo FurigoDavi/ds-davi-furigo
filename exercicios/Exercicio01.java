@@ -67,7 +67,7 @@ public class Exercicio01 {
             adic = 0;
         }
         
-        double salarioLiquido = salarioBruto + adic - ir - desconto; 
+        double salarioLiquido = salarioBruto + adic + salarioFamilia - ir - desconto; 
 
         System.out.println("Nome do funcionario: " + nomeFunc);
         System.out.println("Salario bruto: R$" + salarioBruto);
