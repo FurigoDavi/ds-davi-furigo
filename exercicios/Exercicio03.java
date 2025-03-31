@@ -21,32 +21,32 @@ public class Exercicio03 {
         mi.close();
 
         if (a >= b && b > c){
-            System.out.println("Ordem descrescente: " + a + "," + b + "," + c);
+            System.out.println("Ordem descrescente: " + a + ", " + b + ", " + c);
         }
         else if (c >= b && b > a){
-            System.out.println("Ordem descrescente: " + c + "," + b + "," + a);
+            System.out.println("Ordem descrescente: " + c + ", " + b + ", " + a);
         }
         else if (b >= a && a > c){
-            System.out.println("Ordem decrescente: " + b + "," + a + "," + c);
+            System.out.println("Ordem decrescente: " + b + ", " + a + ", " + c);
         }
         else if (b > c && c >= a){
-            System.out.println("Ordem decrescente: " + b + "," + c + "," + a);
+            System.out.println("Ordem decrescente: " + b + ", " + c + ", " + a);
         }
         else if (c > a && a >= b){
-            System.out.println("Ordem descrescente: " + c + "," + a + "," + b);
+            System.out.println("Ordem descrescente: " + c + ", " + a + ", " + b);
         }
         else if (a > c && c >= b){
-            System.out.println("Ordem decrescente: " + a + "," + c + "," + b);
+            System.out.println("Ordem decrescente: " + a + ", " + c + ", " + b);
         }
         else if (a == b && b == c){
-            System.out.println("Ordem decrescente: " + a + "," + c + "," + b);
+            System.out.println("Ordem decrescente: " + a + ", " + c + ", " + b);
         }
 
         float d = b + c;
         float e = b * b + c * c;
         
         if (a > d){
-            System.out.println("triangulo retangulo");
+            System.out.println("nao forma um triangulo");
         }
         else {
             if (a != b && b != c){
