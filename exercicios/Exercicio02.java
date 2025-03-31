@@ -25,17 +25,17 @@ public class Exercicio02 {
 
         sca.close();
 
-        if ( sex == Masculino && tempTrab > 15){
+        if ( sex == ("Masculino") && tempTrab > 15){
             bonus = (salCasa * 20)/100;
         }
-        else if ( sex == Femenino && tempTrab > 10){
+        else if ( sex == ("Femenino") && tempTrab > 10){
             bonus = (salCasa * 25)/100;
         }
         else{
-            bonus = 100
+            bonus = 100;
         }
 
-        System.out.println("O bonus sera de: R$" + bonus)
+        System.out.println("O bonus sera de: R$" + bonus);
 
     }
 }
