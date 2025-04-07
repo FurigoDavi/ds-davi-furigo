@@ -15,7 +15,7 @@ public class Exercicio02 {
         cod = sca.nextInt();
 
         System.out.println("Digite seu Sexo(Masculino e Feminino): ");
-        sex = sca.nextLine();
+        sex = sca.next();
 
         System.out.println("Digite seu tempo de trabalho: ");
         tempTrab = sca.nextInt();
