@@ -14,10 +14,10 @@ public class Exercicio02 {
         System.out.println("Digite seu codigo de funcionario: ");
         cod = sca.nextInt();
 
-        System.out.println("Digite seu Sexo(Masculino e Femenino): ");
+        System.out.println("Digite seu Sexo(Masculino e Feminino): ");
         sex = sca.nextLine();
 
-        System.out.println("Digite seu tempo de trabalhor: ");
+        System.out.println("Digite seu tempo de trabalho: ");
         tempTrab = sca.nextInt();
 
         System.out.println("Digite seu salario: ");
@@ -28,7 +28,7 @@ public class Exercicio02 {
         if ( sex == ("Masculino") && tempTrab > 15){
             bonus = (salCasa * 20)/100;
         }
-        else if ( sex == ("Femenino") && tempTrab > 10){
+        else if ( sex == ("Feminino") && tempTrab > 10){
             bonus = (salCasa * 25)/100;
         }
         else{
