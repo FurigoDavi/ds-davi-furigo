@@ -15,7 +15,20 @@ public class Calculo extends javax.swing.JFrame {
      */
     public Calculo() {
         initComponents();
+            Desabilitar();
     }
+        void Desabilitar(){
+            txt_N1.setEditable(false);
+            txt_N2.setEditable(false);
+            txt_res.setEditable(false);
+
+            }
+        void Habilitar(){
+            txt_N1.setEditable(true);
+            txt_N2.setEditable(true);
+            txt_res.setEditable(true);
+
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,20 +40,19 @@ public class Calculo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txt_N1 = new javax.swing.JLabel();
-        txt_N2 = new javax.swing.JLabel();
-        txt_res = new javax.swing.JLabel();
+        numero1 = new javax.swing.JLabel();
+        numero2 = new javax.swing.JLabel();
+        resultado = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        isso = new javax.swing.JTextPane();
+        txt_N1 = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        isso2 = new javax.swing.JTextPane();
+        txt_N2 = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        isso3 = new javax.swing.JTextPane();
+        txt_res = new javax.swing.JTextPane();
         botaoSoma = new javax.swing.JButton();
         botaoSub = new javax.swing.JButton();
         botaoMulti = new javax.swing.JButton();
         botaoDiv = new javax.swing.JButton();
-        botaoReturn = new javax.swing.JButton();
         botaoNovo = new javax.swing.JButton();
         botaoLimpar = new javax.swing.JButton();
         botaoSair = new javax.swing.JButton();
@@ -49,23 +61,22 @@ public class Calculo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Furigo´s Calculator", null, null, new java.awt.Font("Segoe UI", 0, 18), new java.awt.Color(0, 204, 204))); // NOI18N
 
-        txt_N1.setForeground(new java.awt.Color(255, 255, 255));
-        txt_N1.setText("Numero1");
+        numero1.setForeground(new java.awt.Color(255, 255, 255));
+        numero1.setText("Numero1");
 
-        txt_N2.setForeground(new java.awt.Color(255, 255, 255));
-        txt_N2.setText("Numero2");
+        numero2.setForeground(new java.awt.Color(255, 255, 255));
+        numero2.setText("Numero2");
 
-        txt_res.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txt_res.setForeground(new java.awt.Color(255, 255, 255));
-        txt_res.setText("Resultado");
+        resultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        resultado.setForeground(new java.awt.Color(255, 255, 255));
+        resultado.setText("Resultado");
 
-        jScrollPane1.setViewportView(isso);
+        jScrollPane1.setViewportView(txt_N1);
 
-        jScrollPane2.setViewportView(isso2);
+        jScrollPane2.setViewportView(txt_N2);
 
-        jScrollPane3.setViewportView(isso3);
+        jScrollPane3.setViewportView(txt_res);
 
         botaoSoma.setText("+");
         botaoSoma.addActionListener(new java.awt.event.ActionListener() {
@@ -92,13 +103,6 @@ public class Calculo extends javax.swing.JFrame {
         botaoDiv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoDivActionPerformed(evt);
-            }
-        });
-
-        botaoReturn.setText("Retomar");
-        botaoReturn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoReturnActionPerformed(evt);
             }
         });
 
@@ -131,45 +135,47 @@ public class Calculo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txt_N2, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-                            .addComponent(txt_N1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(numero2, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                                    .addComponent(numero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane1))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane3)
+                                            .addComponent(jScrollPane2)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(218, 218, 218)))
+                        .addGap(61, 61, 61))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botaoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(botaoSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jScrollPane2))
+                                .addComponent(botaoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txt_res, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(61, 61, 61))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(botaoSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoSub, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoReturn)
-                .addGap(36, 36, 36))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(botaoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(botaoMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(botaoSub, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(botaoDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(60, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,29 +183,28 @@ public class Calculo extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
-                    .addComponent(txt_N1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(numero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2)
-                    .addComponent(txt_N2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(numero2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane3)
-                    .addComponent(txt_res, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
+                    .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(135, 135, 135)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoSoma)
-                    .addComponent(botaoSub)
-                    .addComponent(botaoMulti)
-                    .addComponent(botaoDiv)
-                    .addComponent(botaoReturn))
-                .addGap(35, 35, 35)
+                    .addComponent(botaoSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoSub, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoNovo)
-                    .addComponent(botaoLimpar)
-                    .addComponent(botaoSair)
-                    .addComponent(jButton9))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(botaoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,14 +212,16 @@ public class Calculo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(146, 146, 146)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 524, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 192, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
@@ -225,6 +232,18 @@ public class Calculo extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoDivActionPerformed
 
     private void botaoSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSomaActionPerformed
+
+            int x, y, z; // Variáveis de apoio
+         String r; // R string para receber valor
+
+
+         x = Integer.parseInt( txt_N1.getText()); //Mesclando o Campo com a variável
+         y = Integer.parseInt( txt_N2.getText());
+
+         z= x + y;//operação 
+         r = String.valueOf(z); // passando a variável para String para que o campo de texto seja aceito
+         txt_res.setText(r);// Camppo de resposta recebendo valor
+
 
     }//GEN-LAST:event_botaoSomaActionPerformed
 
@@ -237,20 +256,22 @@ public class Calculo extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMultiActionPerformed
 
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
-        
+
+        System.exit(0);
     }//GEN-LAST:event_botaoSairActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
-
+        
+        txt_N1.setText("");
+        txt_N2.setText("");
+        
+        txt_res.setText("");
     }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNovoActionPerformed
 
+        Habilitar();
     }//GEN-LAST:event_botaoNovoActionPerformed
-
-    private void botaoReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoReturnActionPerformed
-
-    }//GEN-LAST:event_botaoReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,20 +313,19 @@ public class Calculo extends javax.swing.JFrame {
     private javax.swing.JButton botaoLimpar;
     private javax.swing.JButton botaoMulti;
     private javax.swing.JButton botaoNovo;
-    private javax.swing.JButton botaoReturn;
     private javax.swing.JButton botaoSair;
     private javax.swing.JButton botaoSoma;
     private javax.swing.JButton botaoSub;
-    private javax.swing.JTextPane isso;
-    private javax.swing.JTextPane isso2;
-    private javax.swing.JTextPane isso3;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel txt_N1;
-    private javax.swing.JLabel txt_N2;
-    private javax.swing.JLabel txt_res;
+    private javax.swing.JLabel numero1;
+    private javax.swing.JLabel numero2;
+    private javax.swing.JLabel resultado;
+    private javax.swing.JTextPane txt_N1;
+    private javax.swing.JTextPane txt_N2;
+    private javax.swing.JTextPane txt_res;
     // End of variables declaration//GEN-END:variables
 }
